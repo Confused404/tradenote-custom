@@ -6,3 +6,5 @@ dist
 .vscode
 logs
 .idea/
+*.archive
+*.sql
