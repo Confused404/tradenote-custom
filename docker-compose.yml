@@ -6,6 +6,7 @@ services:
     # optional: name the built image so it’s cached/tagged
     image: tradenote-local:latest
     container_name: tradenote_app
+    restart: unless-stopped
     ports:
       - "8080:8080"
     environment:
@@ -19,6 +20,7 @@ services:
   mongo:
     image: mongo:latest
     container_name: tradenote_db
+    restart: unless-stopped
     volumes:
       - tradenote_db:/data/db
     ports:
