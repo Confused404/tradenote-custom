@@ -2,7 +2,7 @@ services:
   tradenote:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     # optional: name the built image so it’s cached/tagged
     image: tradenote-local:latest
     container_name: tradenote_app
