@@ -1,9 +1,13 @@
 services:
   tradenote:
-    image: eleventrading/tradenote
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # optional: name the built image so it’s cached/tagged
+    image: tradenote-local:latest
     container_name: tradenote_app
     ports:
-      - 8080:8080
+      - "8080:8080"
     environment:
       MONGO_URI: mongodb://tradenote:tradenote@mongo:27017/tradenote?authSource=admin
       TRADENOTE_DATABASE: tradenote
